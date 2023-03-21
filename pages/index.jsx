@@ -71,13 +71,13 @@ const IssuesPage = () => {
                 <NavLink href="/">Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/">Products</NavLink>
+                <NavLink href="/products">Products</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/">Documentation</NavLink>
+                <NavLink href="/documentation">Documentation</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/">Pricing</NavLink>
+                <NavLink href="/pricing">Pricing</NavLink>
               </NavItem>
             </NavItems>
           </nav>
