@@ -1,24 +1,21 @@
 import React, { useState } from "react";
 
-const Modal = ({ isOpen, onClose }) => {
-  const [isModalOpen, setIsModalOpen] = useState(isOpen);
+const Modal = ({ isOpen, onClose, children }) => {
+  if (!isOpen) {
+    return null;
+  }
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-    onClose();
-  };
-
-  return isModalOpen ? (
+  return (
     <div className="modal">
-      <div className="modal-overlay" onClick={closeModal}></div>
+      <div className="modal-overlay"></div>
       <div className="modal-content">
-        <button className="modal-close" onClick={closeModal}>
+        <button className="modal-close" onClick={onClose}>
           X
         </button>
         Hello
       </div>
     </div>
-  ) : null;
+  );
 };
 
 export default Modal;

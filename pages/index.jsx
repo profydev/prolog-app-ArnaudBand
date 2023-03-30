@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Routes } from "@config/routes";
 // import Link from "next/link";
+import Modal from "./Modal";
+import { useState } from "react";
 
 const Header = styled.header`
   width: 1280px;
@@ -60,6 +62,17 @@ const ContactButton = styled.button`
 `;
 
 const IssuesPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleButtonClick = () => {
+    setIsModalOpen(true);
+    console.log("Opened.");
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div>
       <Header>
@@ -95,6 +108,13 @@ const IssuesPage = () => {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/icons/message.svg" alt="Contact" />
       </ContactButton>
+      <div>
+        <button onClick={handleButtonClick}>Open Modal</button>
+        <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+          <h1>Opened Modal</h1>
+          <p>Content of the modal.</p>
+        </Modal>
+      </div>
     </div>
   );
 };
