@@ -3,13 +3,14 @@ import { Routes } from "@config/routes";
 // import Link from "next/link";
 
 const Header = styled.header`
-  width: 100%;
+  width: 1280px;
+  margin: 0 auto;
   padding: 0 2rem;
   box-sizing: border-box;
 `;
 
 const Container = styled.div`
-  width: 1280px;
+  // width: 1280px;
   height: 80px;
   margin: 0 auto;
   display: flex;
