@@ -98,18 +98,11 @@ const IssuesPage = () => {
           <HeaderButton href={Routes.projects}>Open Dashboard</HeaderButton>
         </Container>
       </Header>
-      <ContactButton
-        onClick={() =>
-          alert(
-            "Implement this in Challenge 2 - Modal:\n\nhttps://profy.dev/rjs-challenge-modal"
-          )
-        }
-      >
+      <ContactButton onClick={handleButtonClick}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/icons/message.svg" alt="Contact" />
       </ContactButton>
       <div>
-        <button onClick={handleButtonClick}>Open Modal</button>
         <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
           <h1>Opened Modal</h1>
           <p>Content of the modal.</p>
