@@ -12,7 +12,7 @@ const Modal = ({ isOpen, onClose, children }) => {
         <button className="modal-close" onClick={onClose}>
           X
         </button>
-        Hello
+        {children}
       </div>
     </div>
   );
