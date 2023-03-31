@@ -102,12 +102,10 @@ const IssuesPage = () => {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/icons/message.svg" alt="Contact" />
       </ContactButton>
-      <div>
-        <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-          <h1>Opened Modal</h1>
-          <p>Content of the modal.</p>
-        </Modal>
-      </div>
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+        <h1>Opened Modal</h1>
+        <p>Content of the modal.</p>
+      </Modal>
     </div>
   );
 };
