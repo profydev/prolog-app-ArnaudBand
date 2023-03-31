@@ -1,15 +1,18 @@
 import styled from "styled-components";
 import { Routes } from "@config/routes";
 // import Link from "next/link";
+import Modal from "./Modal";
+import { useState } from "react";
 
 const Header = styled.header`
-  width: 100%;
+  width: 1280px;
+  margin: 0 auto;
   padding: 0 2rem;
   box-sizing: border-box;
 `;
 
 const Container = styled.div`
-  width: 1280px;
+  // width: 1280px;
   height: 80px;
   margin: 0 auto;
   display: flex;
@@ -59,6 +62,17 @@ const ContactButton = styled.button`
 `;
 
 const IssuesPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleButtonClick = () => {
+    setIsModalOpen(true);
+    console.log("Opened.");
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div>
       <Header>
@@ -84,16 +98,14 @@ const IssuesPage = () => {
           <HeaderButton href={Routes.projects}>Open Dashboard</HeaderButton>
         </Container>
       </Header>
-      <ContactButton
-        onClick={() =>
-          alert(
-            "Implement this in Challenge 2 - Modal:\n\nhttps://profy.dev/rjs-challenge-modal"
-          )
-        }
-      >
+      <ContactButton onClick={handleButtonClick}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/icons/message.svg" alt="Contact" />
       </ContactButton>
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+        <h1>Opened Modal</h1>
+        <p>Content of the modal.</p>
+      </Modal>
     </div>
   );
 };
